@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Lily Chow — REALTOR® with RE/MAX Real Estate (Mountain View), Calgary. NW Calgary specialist for Dalhousie, Edgemont, the Hamptons and Hidden Valley. Rated 4.98 out of 5 from 167 verified reviews. Over 20 years in Calgary real estate." />
+    <link rel="icon" href="data:," />
+    <title>Lily Chow — Calgary REALTOR® | RE/MAX Real Estate (Mountain View)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #0b0e13;
+        --ink-2: #10141b;
+        --ink-3: #171d27;
+        --line: #26303f;
+        --paper: #eef1f5;
+        --paper-dim: #aeb8c4;
+        --paper-faint: #7e8a99;
+        --gold: #c9a45c;
+        --gold-bright: #e6c87e;
+        --radius: 14px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "Jost", "Avenir Next", "Segoe UI", sans-serif;
+        font-weight: 400;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        padding-bottom: 76px; /* room for sticky bar */
+      }
+      @media (min-width: 900px) { body { padding-bottom: 0; } }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; }
+      .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+      h1, h2, h3, .wordmark { font-family: "Marcellus", "Times New Roman", serif; font-weight: 400; }
+
+      /* ---------- top bar ---------- */
+      .topbar { position: absolute; inset: 0 0 auto 0; z-index: 20; }
+      .topbar .wrap {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 16px; padding-top: 20px;
+      }
+      .wordmark { font-size: 1.3rem; letter-spacing: .3em; text-transform: uppercase; text-decoration: none; }
+      .wordmark em { font-style: normal; color: var(--gold); }
+      .top-actions { display: flex; align-items: center; gap: 10px; }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+        min-height: 48px; padding: 12px 26px; border-radius: 999px;
+        font-family: "Jost", sans-serif; font-size: .98rem; font-weight: 600;
+        letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+        transition: background .2s ease, color .2s ease, border-color .2s ease;
+        cursor: pointer;
+      }
+      .btn-gold { background: var(--gold); color: #14100a; border: 1px solid var(--gold); }
+      .btn-gold:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
+      .btn-ghost { background: transparent; color: var(--paper); border: 1px solid rgba(238,241,245,.45); }
+      .btn-ghost:hover { border-color: var(--paper); }
+      .btn-sm { min-height: 44px; padding: 9px 20px; font-size: .85rem; }
+
+      /* ---------- hero ---------- */
+      .hero {
+        position: relative; isolation: isolate;
+        min-height: 92svh;
+        display: flex; align-items: flex-end;
+        overflow: hidden;
+      }
+      .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+      .hero::after {
+        content: ""; position: absolute; inset: 0; z-index: -1;
+        background: linear-gradient(180deg, rgba(11,14,19,.66) 0%, rgba(11,14,19,.22) 34%, rgba(11,14,19,.58) 68%, var(--ink) 100%);
+      }
+      .hero-inner { padding: 120px 0 56px; width: 100%; }
+      .hero-eyebrow {
+        display: inline-flex; align-items: center; gap: 10px;
+        font-size: .82rem; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-bright);
+        margin: 0 0 18px;
+      }
+      .hero-eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gold); }
+      .hero h1 {
+        margin: 0; font-size: clamp(3rem, 11vw, 6.2rem); line-height: .98;
+        letter-spacing: .05em; text-transform: uppercase;
+      }
+      .hero h1 .gold { color: var(--gold); }
+      .hero-sub {
+        margin: 20px 0 0; max-width: 36rem;
+        font-size: clamp(1.05rem, 2.6vw, 1.3rem); font-weight: 300; color: #e3e9f0;
+      }
+      .hero-sub strong { font-weight: 500; color: #fff; }
+      .rating-chip {
+        display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+        margin-top: 24px; padding: 10px 18px;
+        background: rgba(11,14,19,.66); border: 1px solid var(--line); border-radius: 999px;
+        backdrop-filter: blur(6px); font-size: .95rem;
+      }
+      .stars { color: var(--gold); letter-spacing: .18em; font-size: .9rem; }
+      .rating-chip b { font-weight: 600; }
+      .rating-chip span.dim { color: var(--paper-dim); }
+      .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+      .hero-meta {
+        display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 26px;
+        font-size: .92rem; color: var(--paper-dim); letter-spacing: .03em;
+      }
+      .hero-meta .dot { color: var(--gold); }
+
+      /* ---------- proof strip ---------- */
+      .proof { border-bottom: 1px solid var(--line); background: var(--ink-2); }
+      .proof-grid {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+        background: var(--line); border-inline: 1px solid var(--line);
+      }
+      @media (min-width: 880px) { .proof-grid { grid-template-columns: repeat(4, 1fr); } }
+      .proof-item { background: var(--ink-2); padding: 26px 22px; text-align: center; }
+      .proof-num { font-family: "Marcellus", serif; font-size: clamp(1.7rem, 4.5vw, 2.3rem); line-height: 1.05; color: var(--paper); }
+      .proof-num .gold { color: var(--gold); }
+      .proof-label { margin-top: 8px; font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; color: var(--paper-faint); }
+
+      /* ---------- sections ---------- */
+      section { padding: 72px 0; }
+      .sec-head { max-width: 640px; margin-bottom: 40px; }
+      .sec-kicker {
+        margin: 0 0 10px; font-size: .8rem; letter-spacing: .28em;
+        text-transform: uppercase; color: var(--gold);
+      }
+      .sec-head h2 { margin: 0; font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.12; letter-spacing: .02em; }
+      .sec-head p { margin: 14px 0 0; color: var(--paper-dim); font-weight: 300; font-size: 1.05rem; }
+
+      /* listings */
+      .listings { background: var(--ink-2); border-block: 1px solid var(--line); }
+      .lst-grid { display: grid; gap: 20px; }
+      @media (min-width: 820px) { .lst-grid { grid-template-columns: repeat(2, 1fr); } }
+      .lst-card {
+        border: 1px solid var(--line); border-radius: var(--radius);
+        background: var(--ink-3); overflow: hidden; display: flex; flex-direction: column;
+      }
+      .lst-photo { position: relative; margin: 0; }
+      .lst-photo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+      .lst-photo figcaption {
+        position: absolute; right: 10px; bottom: 10px;
+        font-size: .7rem; letter-spacing: .14em; text-transform: uppercase;
+        color: rgba(238,241,245,.85); background: rgba(11,14,19,.65);
+        padding: 4px 10px; border-radius: 999px;
+      }
+      .lst-tag {
+        position: absolute; left: 14px; top: 14px;
+        font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 600;
+        color: #14100a; background: var(--gold);
+        padding: 5px 12px; border-radius: 999px;
+      }
+      .lst-body { padding: 24px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+      .lst-price { font-family: "Marcellus", serif; font-size: 2rem; line-height: 1; color: var(--paper); }
+      .lst-addr { font-size: 1.12rem; font-weight: 500; letter-spacing: .02em; }
+      .lst-area { color: var(--gold-bright); font-size: .85rem; letter-spacing: .2em; text-transform: uppercase; }
+      .lst-note { color: var(--paper-dim); font-weight: 300; margin: 6px 0 0; }
+      .lst-link {
+        margin-top: auto; padding-top: 16px;
+        display: inline-flex; align-items: center; gap: 7px;
+        color: var(--gold-bright); text-decoration: none; font-weight: 500;
+        letter-spacing: .1em; text-transform: uppercase; font-size: .85rem;
+      }
+      .lst-link:hover { color: #fff; }
+      .lst-foot { margin: 22px 0 0; color: var(--paper-faint); font-size: .92rem; font-weight: 300; }
+
+      /* areas */
+      .area-grid { display: grid; gap: 16px; }
+      @media (min-width: 760px) { .area-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1020px) { .area-grid { grid-template-columns: repeat(4, 1fr); } }
+      .area-card {
+        border: 1px solid var(--line); border-radius: var(--radius);
+        background: var(--ink-2); padding: 26px 24px;
+      }
+      .area-card h3 { margin: 0 0 8px; font-size: 1.35rem; letter-spacing: .03em; }
+      .area-card p { margin: 0; color: var(--paper-dim); font-weight: 300; font-size: .98rem; }
+      .area-card .tick { color: var(--gold); font-family: "Marcellus", serif; display: block; margin-bottom: 12px; }
+
+      /* about */
+      .about { background: var(--ink-2); border-block: 1px solid var(--line); }
+      .about-grid { display: grid; gap: 36px; align-items: center; }
+      @media (min-width: 880px) { .about-grid { grid-template-columns: 1.05fr 1fr; gap: 56px; } }
+      .about-photo { margin: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); position: relative; }
+      .about-photo img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+      .about-photo figcaption {
+        position: absolute; right: 10px; bottom: 10px;
+        font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+        color: rgba(238,241,245,.85); background: rgba(11,14,19,.65);
+        padding: 4px 10px; border-radius: 999px;
+      }
+      .about-copy h2 { margin: 0 0 16px; font-size: clamp(1.9rem, 5vw, 2.6rem); line-height: 1.15; }
+      .about-copy p { margin: 0 0 16px; color: var(--paper-dim); font-weight: 300; font-size: 1.05rem; }
+      .about-copy p strong { color: var(--paper); font-weight: 500; }
+      .about-points { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 12px; }
+      .about-points li { display: flex; gap: 12px; align-items: baseline; }
+      .about-points .tick { color: var(--gold); font-family: "Marcellus", serif; }
+      .signature { margin-top: 26px; font-family: "Marcellus", serif; font-size: 1.15rem; letter-spacing: .05em; }
+      .signature small { display: block; font-family: "Jost", sans-serif; font-size: .82rem; letter-spacing: .2em; text-transform: uppercase; color: var(--paper-faint); margin-top: 4px; }
+
+      /* reviews summary */
+      .rev-summary {
+        display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px;
+        padding: 26px; border: 1px solid var(--line); border-radius: var(--radius);
+        background: var(--ink-3);
+      }
+      .rev-score { font-family: "Marcellus", serif; font-size: 3rem; line-height: 1; }
+      .rev-summary .stars { font-size: 1.05rem; }
+      .rev-summary p { margin: 4px 0 0; color: var(--paper-dim); font-weight: 300; }
+      .rev-badges { display: grid; gap: 16px; margin-top: 16px; }
+      @media (min-width: 820px) { .rev-badges { grid-template-columns: repeat(2, 1fr); } }
+      .badge-card {
+        border: 1px solid var(--line); border-radius: var(--radius);
+        background: var(--ink-2); padding: 24px;
+      }
+      .badge-card h3 { margin: 0 0 6px; font-size: 1.25rem; }
+      .badge-card p { margin: 0; color: var(--paper-dim); font-weight: 300; }
+
+      /* final CTA */
+      .final-cta { text-align: center; padding: 84px 0; background: var(--ink-2); border-top: 1px solid var(--line); }
+      .final-cta h2 { margin: 0 auto 14px; max-width: 24ch; font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.12; }
+      .final-cta p { margin: 0 auto 30px; max-width: 46ch; color: var(--paper-dim); font-weight: 300; font-size: 1.08rem; }
+      .final-cta .hero-ctas { justify-content: center; margin-top: 0; }
+      .final-cta .mail-line { margin-top: 22px; font-size: 1.05rem; letter-spacing: .04em; }
+      .final-cta .mail-line a { color: var(--gold-bright); text-decoration: none; }
+      .final-cta .mail-line a:hover { color: #fff; }
+
+      footer { border-top: 1px solid var(--line); padding: 30px 0 38px; }
+      footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; align-items: center; }
+      footer p { margin: 0; font-size: .88rem; color: var(--paper-faint); }
+
+      /* sticky mobile bar */
+      .sticky-bar {
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+        display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px;
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(13,16,22,.92); border-top: 1px solid var(--line);
+        backdrop-filter: blur(10px);
+      }
+      .sticky-bar a {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        min-height: 52px; border-radius: 10px; text-decoration: none;
+        font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: .92rem;
+      }
+      .sticky-listings { border: 1px solid var(--line); color: var(--paper); background: var(--ink-3); }
+      .sticky-mail { background: var(--gold); color: #14100a; }
+      @media (min-width: 900px) { .sticky-bar { display: none; } }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .btn { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ================= HERO ================= -->
+    <header class="hero">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2000&auto=format&fit=crop" alt="A well-kept family home on a quiet Calgary street at dusk" fetchpriority="high" />
+      <div class="topbar">
+        <div class="wrap">
+          <a class="wordmark" href="#top">Lily <em>Chow</em></a>
+          <div class="top-actions">
+            <a class="btn btn-gold btn-sm" href="mailto:lilyoichow@gmail.com">Email Lily</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-inner" id="top">
+        <div class="wrap">
+          <p class="hero-eyebrow">REALTOR® · RE/MAX Real Estate (Mountain View)</p>
+          <h1>Lily <span class="gold">Chow</span></h1>
+          <p class="hero-sub">Northwest Calgary is home — and it&rsquo;s where I&rsquo;ve helped families buy and sell for <strong>over 20 years</strong>. Dalhousie, Edgemont, the Hamptons, Hidden Valley: I know these streets, and I know what your home is worth on them.</p>
+
+          <div class="rating-chip" aria-label="Rated 4.98 out of 5 from 167 verified reviews on RankMyAgent">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span><b>4.98</b> <span class="dim">· 167 verified reviews on RankMyAgent</span></span>
+          </div>
+
+          <div class="hero-ctas">
+            <a class="btn btn-gold" href="#listings">View Featured Listings</a>
+            <a class="btn btn-ghost" href="mailto:lilyoichow@gmail.com">Get in Touch</a>
+          </div>
+
+          <div class="hero-meta">
+            <span>RE/MAX Platinum Club</span>
+            <span><span class="dot">◆</span>&nbsp; 2025 RankMyAgent Award Winner</span>
+            <span><span class="dot">◆</span>&nbsp; NW Calgary specialist</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= PROOF STRIP ================= -->
+    <div class="proof" aria-label="Track record">
+      <div class="wrap">
+        <div class="proof-grid">
+          <div class="proof-item">
+            <div class="proof-num">4.98<span class="gold">★</span></div>
+            <div class="proof-label">167 verified reviews</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">20<span class="gold">+</span> yrs</div>
+            <div class="proof-label">In Calgary real estate</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">Platinum</div>
+            <div class="proof-label">RE/MAX Platinum Club</div>
+          </div>
+          <div class="proof-item">
+            <div class="proof-num">2025</div>
+            <div class="proof-label">RankMyAgent Award Winner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- ================= LISTINGS ================= -->
+      <section class="listings" id="listings">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-kicker">Featured Listings</p>
+            <h2>Currently on the market</h2>
+            <p>A selection of homes I&rsquo;m representing right now. For full details, photos, or a private showing, send me an email — I reply personally.</p>
+          </div>
+          <div class="lst-grid">
+            <article class="lst-card">
+              <figure class="lst-photo">
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1600&auto=format&fit=crop" alt="A bright suburban home with a double garage" loading="lazy" />
+                <span class="lst-tag">For Sale</span>
+                <figcaption>Illustrative imagery</figcaption>
+              </figure>
+              <div class="lst-body">
+                <div class="lst-price">$329,900</div>
+                <div class="lst-addr">230-360 Harvest Hills Way NE</div>
+                <div class="lst-area">Harvest Hills · Calgary</div>
+                <p class="lst-note">An affordable way into one of north Calgary&rsquo;s most convenient communities — minutes to Harvest Hills Lake, shopping, and Deerfoot Trail.</p>
+                <a class="lst-link" href="mailto:lilyoichow@gmail.com?subject=Listing%20inquiry%20—%20230-360%20Harvest%20Hills%20Way%20NE">Ask about this home <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+            <article class="lst-card">
+              <figure class="lst-photo">
+                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1600&auto=format&fit=crop" alt="A modern low-rise residential building" loading="lazy" />
+                <span class="lst-tag">For Sale</span>
+                <figcaption>Illustrative imagery</figcaption>
+              </figure>
+              <div class="lst-body">
+                <div class="lst-price">$234,900</div>
+                <div class="lst-addr">401-727 56 Avenue SW</div>
+                <div class="lst-area">Windsor Park · Calgary</div>
+                <p class="lst-note">Low-maintenance living in established Windsor Park, just south of Chinook Centre — a smart first home or a solid rental in a proven location.</p>
+                <a class="lst-link" href="mailto:lilyoichow@gmail.com?subject=Listing%20inquiry%20—%20401-727%2056%20Avenue%20SW">Ask about this home <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+          <p class="lst-foot">Thinking of selling instead? I&rsquo;ll walk your street&rsquo;s recent sales with you and price your home with real NW Calgary numbers — no obligation.</p>
+        </div>
+      </section>
+
+      <!-- ================= AREAS ================= -->
+      <section id="areas">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-kicker">Areas Served</p>
+            <h2>The northwest is my neighbourhood</h2>
+            <p>Two decades of buying and selling in NW Calgary means I know which streets hold their value, which schools families ask about, and what buyers are paying right now.</p>
+          </div>
+          <div class="area-grid">
+            <div class="area-card">
+              <span class="tick">◆</span>
+              <h3>Dalhousie</h3>
+              <p>Established homes, big lots, and the Dalhousie LRT at your door — a NW classic that never sits long.</p>
+            </div>
+            <div class="area-card">
+              <span class="tick">◆</span>
+              <h3>Edgemont</h3>
+              <p>Ravine lots and mountain views in one of Calgary&rsquo;s most sought-after established communities.</p>
+            </div>
+            <div class="area-card">
+              <span class="tick">◆</span>
+              <h3>The Hamptons</h3>
+              <p>Golf-course living around the Hamptons Golf Club, with executive homes and quiet crescents.</p>
+            </div>
+            <div class="area-card">
+              <span class="tick">◆</span>
+              <h3>Hidden Valley</h3>
+              <p>Family-friendly streets beside Nose Hill Park — great value for growing families in the NW.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+      <section class="about" id="about">
+        <div class="wrap about-grid">
+          <figure class="about-photo">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1600&auto=format&fit=crop" alt="An elegant Calgary home glowing at twilight" loading="lazy" />
+            <figcaption>Illustrative imagery</figcaption>
+          </figure>
+          <div class="about-copy">
+            <p class="sec-kicker">About Lily</p>
+            <h2>Twenty years. One city. One standard.</h2>
+            <p>I&rsquo;ve spent <strong>over two decades</strong> helping Calgarians buy and sell homes, most of them right here in the northwest. That local focus is why my clients rate me <strong>4.98 out of 5 across 167 verified reviews</strong> — and why RE/MAX welcomed me into its <strong>Platinum Club</strong>.</p>
+            <p>When you work with me, you work with me: your pricing strategy, your negotiations, and your calls are handled personally, start to finish.</p>
+            <ul class="about-points">
+              <li><span class="tick">◆</span><span>Deep NW Calgary expertise — Dalhousie, Edgemont, the Hamptons, Hidden Valley</span></li>
+              <li><span class="tick">◆</span><span>2025 RankMyAgent Award Winner</span></li>
+              <li><span class="tick">◆</span><span>RE/MAX Real Estate (Mountain View)</span></li>
+            </ul>
+            <p class="signature">Lily Chow <small>REALTOR® · RE/MAX Real Estate (Mountain View)</small></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= REVIEWS ================= -->
+      <section id="reviews">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-kicker">Client Reviews</p>
+            <h2>Rated by the people who matter</h2>
+          </div>
+          <div class="rev-summary">
+            <div class="rev-score">4.98</div>
+            <div>
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <p>Average rating from <strong>167 verified client reviews</strong> on RankMyAgent</p>
+            </div>
+            <a class="btn btn-ghost btn-sm" href="mailto:lilyoichow@gmail.com" style="margin-left:auto">Work with Lily</a>
+          </div>
+          <div class="rev-badges">
+            <div class="badge-card">
+              <h3>RE/MAX Platinum Club</h3>
+              <p>Inducted into the RE/MAX Platinum Club — recognition reserved for agents performing at the top of the brokerage.</p>
+            </div>
+            <div class="badge-card">
+              <h3>2025 RankMyAgent Award Winner</h3>
+              <p>Awarded by RankMyAgent, where every review is verified against a real, closed transaction.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FINAL CTA ================= -->
+      <section class="final-cta" id="contact">
+        <div class="wrap">
+          <h2>Buying or selling in NW Calgary?</h2>
+          <p>Tell me where you&rsquo;re starting from — a first home, a family move, or a sale you want priced right. I&rsquo;ll reply personally with a plan.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-gold" href="mailto:lilyoichow@gmail.com">Email Lily Chow</a>
+            <a class="btn btn-ghost" href="#listings">See Featured Listings</a>
+          </div>
+          <p class="mail-line"><a href="mailto:lilyoichow@gmail.com">lilyoichow@gmail.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p>© 2026 Lily Chow · RE/MAX Real Estate (Mountain View) · Calgary, AB</p>
+        <p>REALTOR® — not intended to solicit buyers or sellers currently under written agreement.</p>
+      </div>
+    </footer>
+
+    <!-- sticky mobile action bar -->
+    <nav class="sticky-bar" aria-label="Quick actions">
+      <a class="sticky-listings" href="#listings">Listings</a>
+      <a class="sticky-mail" href="mailto:lilyoichow@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Email Lily
+      </a>
+    </nav>
+  </body>
+</html>
